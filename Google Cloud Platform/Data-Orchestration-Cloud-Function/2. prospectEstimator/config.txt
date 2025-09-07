@@ -1,0 +1,5 @@
+memory: 4Gi
+timeout: 3600s
+runtime: python312
+endpoint: prospectEstimator
+cfname: prospectEstimator

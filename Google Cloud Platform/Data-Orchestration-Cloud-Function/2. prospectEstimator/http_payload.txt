@@ -1,0 +1,30 @@
+{
+	"orderId": 10044,
+	"version": 1,
+	"logKey": "0728D47A-6ECB-11F0-AAD5-42004E494300",
+	"filePath": "June_2025",
+	"orderQuantity": 14000,
+	"segments": [
+		{
+			"StoreNumber": "CF011913",
+			"ExternalCode": "XU548891",
+			"quantity": 6000
+		},
+		{
+			"StoreNumber": "CF011913",
+			"ExternalCode": "XU548892",
+			"quantity": 6000
+		},
+		{
+			"StoreNumber": "CF011911",
+			"ExternalCode": "OV551402",
+			"quantity": 2000
+		}
+	],
+	"orderBy": [
+		{
+			"columnName": "Age_B",
+			"sortOrder": "ASC"
+		}
+	]
+}

@@ -1,0 +1,5 @@
+memory: 1Gi
+timeout: 3600s
+runtime: python312
+endpoint: spectacleOrderIngestion
+cfname: spectacleOrderIngestion

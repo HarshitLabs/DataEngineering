@@ -1,0 +1,54 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36" version="28.2.0">
+  <diagram name="Page-1" id="zEJFFX0QH9xlVHwiXIZF">
+    <mxGraphModel dx="1042" dy="608" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="u-UMqfTqTJCHnJpmfmLm-3" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="u-UMqfTqTJCHnJpmfmLm-1" target="u-UMqfTqTJCHnJpmfmLm-6" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="425" y="284" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="u-UMqfTqTJCHnJpmfmLm-1" value="Start" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="365" y="184" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="u-UMqfTqTJCHnJpmfmLm-9" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="u-UMqfTqTJCHnJpmfmLm-6" target="u-UMqfTqTJCHnJpmfmLm-8" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="u-UMqfTqTJCHnJpmfmLm-6" value="Load spectacle order file on GCS Bucket&amp;nbsp;&lt;div&gt;&lt;b&gt;spectacle-order&amp;nbsp;&lt;/b&gt;&lt;/div&gt;&lt;div&gt;and hit spectacleOrderIngestion CF using API&lt;/div&gt;&lt;div&gt;It will load the file in table Spectacle.OrderFile after performing some transformations.&lt;/div&gt;" style="whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="300" y="272" width="250" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="u-UMqfTqTJCHnJpmfmLm-13" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="u-UMqfTqTJCHnJpmfmLm-8" target="u-UMqfTqTJCHnJpmfmLm-12" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="u-UMqfTqTJCHnJpmfmLm-8" value="After that it will hit the prospectEstimator CF internally on its own and start the estimation process using Prospect.Pool table as it contains all population Data." style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" parent="1" vertex="1">
+          <mxGeometry x="199" y="422" width="452" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="G28rnqpjgwJRyCqYY4Ou-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="u-UMqfTqTJCHnJpmfmLm-12">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="424.75" y="712" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="u-UMqfTqTJCHnJpmfmLm-12" value="After successful completion of CF it will extract the estimates based on the locations and export a location and age wise counts file over GCS bucket&amp;nbsp;&lt;b&gt;spectacle-order&lt;/b&gt;" style="whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="237" y="562" width="375.5" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="u-UMqfTqTJCHnJpmfmLm-17" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" target="u-UMqfTqTJCHnJpmfmLm-16" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="425" y="672" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="u-UMqfTqTJCHnJpmfmLm-19" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" target="u-UMqfTqTJCHnJpmfmLm-18" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="425.5" y="772" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="u-UMqfTqTJCHnJpmfmLm-20" value="END" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="363" y="712" width="125" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="u-UMqfTqTJCHnJpmfmLm-22" value="&lt;b&gt;Spectacle Prospect Flow Diagram&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=default;fillColor=default;fontSize=18;" parent="1" vertex="1">
+          <mxGeometry x="270.5" y="125" width="310" height="40" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

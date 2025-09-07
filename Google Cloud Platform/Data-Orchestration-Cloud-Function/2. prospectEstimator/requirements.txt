@@ -1,0 +1,12 @@
+functions-framework==3.*
+google-cloud-bigquery
+pandas
+db-dtypes
+fsspec
+gcsfs
+pandas-gbq
+flask
+google-cloud-pubsub
+python-liquid
+numpy
+google-auth
