@@ -1,0 +1,172 @@
+{
+	"name": "SyclePatient",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_Sycle",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"container": "incoming"
+			},
+			"columnDelimiter": "|",
+			"escapeChar": "\"",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "Customer ID",
+				"type": "String"
+			},
+			{
+				"name": "First",
+				"type": "String"
+			},
+			{
+				"name": "Last",
+				"type": "String"
+			},
+			{
+				"name": "Preferred",
+				"type": "String"
+			},
+			{
+				"name": "Store",
+				"type": "String"
+			},
+			{
+				"name": "Date of Birth",
+				"type": "String"
+			},
+			{
+				"name": "Purchase Date",
+				"type": "String"
+			},
+			{
+				"name": "Address1",
+				"type": "String"
+			},
+			{
+				"name": "Address2",
+				"type": "String"
+			},
+			{
+				"name": "City",
+				"type": "String"
+			},
+			{
+				"name": "State",
+				"type": "String"
+			},
+			{
+				"name": "Zip",
+				"type": "String"
+			},
+			{
+				"name": "E-mail address",
+				"type": "String"
+			},
+			{
+				"name": "Area Code",
+				"type": "String"
+			},
+			{
+				"name": "Phone",
+				"type": "String"
+			},
+			{
+				"name": "Cell Enabled",
+				"type": "String"
+			},
+			{
+				"name": "Cell Area Code",
+				"type": "String"
+			},
+			{
+				"name": "Cell Phone",
+				"type": "String"
+			},
+			{
+				"name": "Original Referral Source",
+				"type": "String"
+			},
+			{
+				"name": "Sub Referral Source",
+				"type": "String"
+			},
+			{
+				"name": "Do Not Mail",
+				"type": "String"
+			},
+			{
+				"name": "Promotion Call",
+				"type": "String"
+			},
+			{
+				"name": "Service Call",
+				"type": "String"
+			},
+			{
+				"name": "National Do Not Call",
+				"type": "String"
+			},
+			{
+				"name": "Internal Do Not Call",
+				"type": "String"
+			},
+			{
+				"name": "Do Not Email",
+				"type": "String"
+			},
+			{
+				"name": "HIPAA Waiver Signed",
+				"type": "String"
+			},
+			{
+				"name": "Insurance Customer",
+				"type": "String"
+			},
+			{
+				"name": "Ins 1 Source",
+				"type": "String"
+			},
+			{
+				"name": "Ins 2 Source",
+				"type": "String"
+			},
+			{
+				"name": "Ins 1 Company",
+				"type": "String"
+			},
+			{
+				"name": "Ins 2 Company",
+				"type": "String"
+			},
+			{
+				"name": "Created On",
+				"type": "String"
+			},
+			{
+				"name": "Created By",
+				"type": "String"
+			},
+			{
+				"name": "Updated On",
+				"type": "String"
+			},
+			{
+				"name": "Updated By",
+				"type": "String"
+			},
+			{
+				"name": "FranchiseOwner",
+				"type": "String"
+			}
+		]
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

@@ -1,0 +1,51 @@
+{
+	"name": "DS_Patient",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_Source__ME_DB",
+			"type": "LinkedServiceReference",
+			"parameters": {
+				"ServerName": {
+					"value": "@dataset().ServerName",
+					"type": "Expression"
+				},
+				"DBName": {
+					"value": "@dataset().DataBase",
+					"type": "Expression"
+				},
+				"UserName": {
+					"value": "@dataset().UserName",
+					"type": "Expression"
+				},
+				"Password": {
+					"value": "@dataset().Password",
+					"type": "Expression"
+				}
+			}
+		},
+		"parameters": {
+			"ServerName": {
+				"type": "string"
+			},
+			"DataBase": {
+				"type": "string"
+			},
+			"UserName": {
+				"type": "string"
+			},
+			"Password": {
+				"type": "string"
+			}
+		},
+		"folder": {
+			"name": "Sycle"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "Medical",
+			"table": "NewPatientsModified_FF"
+		}
+	}
+}

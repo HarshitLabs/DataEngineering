@@ -1,0 +1,11 @@
+{
+	"name": "dataload",
+	"properties": {
+		"location": "EastUS",
+		"identity": {
+			"type": "SystemAssigned",
+			"principalId": "da320b43fafnanf-sfnjsan-1b755205",
+			"tenantId": "d1fjisNFjS V-kV-898989839c9e"
+		}
+	}
+}

@@ -1,0 +1,32 @@
+{
+	"name": "NewPatient",
+	"properties": {
+		"type": "MappingDataFlow",
+		"typeProperties": {
+			"sources": [
+				{
+					"dataset": {
+						"referenceName": "SyclePatient",
+						"type": "DatasetReference"
+					},
+					"name": "NewPatient"
+				}
+			],
+			"sinks": [
+				{
+					"dataset": {
+						"referenceName": "DS_Patient",
+						"type": "DatasetReference"
+					},
+					"name": "NewPatientSink"
+				}
+			],
+			"transformations": [
+				{
+					"name": "NewPatientFlatFile"
+				}
+			],
+			"script": "parameters{\n\tSycleExportDate as string\n}\nsource(output(\n\t\t{Customer ID} as string,\n\t\tFirst as string,\n\t\tLast as string,\n\t\tPreferred as string,\n\t\tStore as string,\n\t\t{Date of Birth} as string,\n\t\t{Purchase Date} as string,\n\t\tAddress1 as string,\n\t\tAddress2 as string,\n\t\tCity as string,\n\t\tState as string,\n\t\tZip as string,\n\t\t{E-mail address} as string,\n\t\t{Area Code} as string,\n\t\tPhone as string,\n\t\t{Cell Enabled} as string,\n\t\t{Cell Area Code} as string,\n\t\t{Cell Phone} as string,\n\t\t{Original Referral Source} as string,\n\t\t{Sub Referral Source} as string,\n\t\t{Do Not Mail} as string,\n\t\t{Promotion Call} as string,\n\t\t{Service Call} as string,\n\t\t{National Do Not Call} as string,\n\t\t{Internal Do Not Call} as string,\n\t\t{Do Not Email} as string,\n\t\t{HIPAA Waiver Signed} as string,\n\t\t{Insurance Customer} as string,\n\t\t{Ins 1 Source} as string,\n\t\t{Ins 2 Source} as string,\n\t\t{Ins 1 Company} as string,\n\t\t{Ins 2 Company} as string,\n\t\t{Created On} as string,\n\t\t{Created By} as string,\n\t\t{Updated On} as string,\n\t\t{Updated By} as string,\n\t\tFranchiseOwner as string\n\t),\n\tallowSchemaDrift: true,\n\tvalidateSchema: false,\n\tignoreNoFilesFound: false,\n\twildcardPaths:['/Patient*']) ~> NewPatient\nNewPatient derive(LastHearingAidPurchase = toString(null()),\n\t\tLastHearingTest = toString(null()),\n\t\tGoodToImport = 1,\n\t\tErrorDescription = '',\n\t\tLastModifiedOn = currentDate(),\n\t\tSycleExportDate = $SycleExportDate) ~> NewPatientFlatFile\nNewPatientFlatFile sink(allowSchemaDrift: true,\n\tvalidateSchema: false,\n\tdeletable:false,\n\tinsertable:true,\n\tupdateable:false,\n\tupsertable:false,\n\trecreate:true,\n\tformat: 'table',\n\tskipDuplicateMapInputs: true,\n\tskipDuplicateMapOutputs: true,\n\tsaveOrder: 1,\n\terrorHandlingOption: 'stopOnFirstError',\n\tmapColumn(\n\t\tCustomerID = {Customer ID},\n\t\tFirstName = First,\n\t\tLastName = Last,\n\t\tPreferred,\n\t\tStore,\n\t\tDateofBirth = {Date of Birth},\n\t\t{Purchase Date},\n\t\tStreet1 = Address1,\n\t\tStreet2 = Address2,\n\t\tCity,\n\t\tState,\n\t\tZip,\n\t\tEmail = {E-mail address},\n\t\t{Area Code},\n\t\tPhone,\n\t\t{Cell Enabled},\n\t\t{Cell Area Code},\n\t\t{Cell Phone},\n\t\tRefSource = {Original Referral Source},\n\t\tSubRefSource = {Sub Referral Source},\n\t\t{Do Not Mail},\n\t\t{Promotion Call},\n\t\tCallStatus = {Service Call},\n\t\t{National Do Not Call},\n\t\t{Internal Do Not Call},\n\t\t{Do Not Email},\n\t\tHIPAAWaiverSigned = {HIPAA Waiver Signed},\n\t\t{Insurance Customer},\n\t\t{Ins 1 Source},\n\t\t{Ins 2 Source},\n\t\t{Ins 1 Company},\n\t\t{Ins 2 Company},\n\t\t{Created On},\n\t\t{Created By},\n\t\t{Updated On},\n\t\t{Updated By},\n\t\tFranchiseOwner,\n\t\tLastHearingAidPurchase,\n\t\tLastHearingTest,\n\t\tGoodToImport,\n\t\tErrorDescription,\n\t\tLastModified = LastModifiedOn,\n\t\tSycleExportDate\n\t)) ~> NewPatientSink"
+		}
+	}
+}

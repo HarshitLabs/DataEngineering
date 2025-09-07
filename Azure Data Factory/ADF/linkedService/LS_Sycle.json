@@ -1,0 +1,11 @@
+{
+	"name": "LS_Sycle",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "AzureBlobStorage",
+		"typeProperties": {
+			"connectionString": "DefaultEndpointsProtocol=https;AccountName=medical;EndpointSuffix=core.windows.net;"
+		}
+	}
+}

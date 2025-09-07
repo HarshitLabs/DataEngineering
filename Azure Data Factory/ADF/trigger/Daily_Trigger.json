@@ -1,0 +1,29 @@
+{
+    "name": "Daily_Trigger",
+    "properties": {
+        "annotations": [],
+        "runtimeState": "Started",
+        "pipelines": [
+            {
+                "pipelineReference": {
+                    "referenceName": "PL_NewPatient",
+                    "type": "PipelineReference"
+                },
+                "parameters": {
+                    "DataBase": "Medical",
+                    "UserName": "abc",
+                    "Password": "123abc"
+                }
+            }
+        ],
+        "type": "ScheduleTrigger",
+        "typeProperties": {
+            "recurrence": {
+                "frequency": "Day",
+                "interval": 1,
+                "startTime": "2025-05-16T09:30:00Z",
+                "timeZone": "India Standard Time"
+            }
+        }
+    }
+}
