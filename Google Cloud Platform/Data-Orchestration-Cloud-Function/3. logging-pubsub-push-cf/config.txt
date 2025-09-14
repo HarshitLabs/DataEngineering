@@ -1,0 +1,3 @@
+memory: 256Mi
+timeout: 540s
+runtime: python312
